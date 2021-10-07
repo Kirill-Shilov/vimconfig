@@ -35,6 +35,7 @@ call plug#end()
 :lua require('mylspconfig')
 :lua require('mygopls')
 :lua require('mypyright')
+:lua require('mytss')
 
 autocmd FileType <file type> setlocal filetype+=.links
 autocmd FileType nerdtree setlocal relativenumber
