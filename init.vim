@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovim/nvim-lspconfig'
 Plug 'vim-airline/vim-airline'
 " On-demand loading
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -42,15 +43,20 @@ autocmd FileType nerdtree setlocal relativenumber
 colorscheme gruvbox
 let g:mapleader=' '
 let g:EasyMotion_use_smartsign_us = 1
+" relativenumber in nerdtree
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
 " set cursorline
 set background=dark
 set colorcolumn=79
 set number
 set expandtab
-" set tabstop=4
-" set shiftwidth=4
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+" set tabstop=2
+" set shiftwidth=2
 set smarttab
 set smartindent
 set hlsearch
@@ -71,8 +77,6 @@ map <C-n> :NERDTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <localleader>
 " EasyMotion
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>s <Plug>(easymotion-overwin-f)
