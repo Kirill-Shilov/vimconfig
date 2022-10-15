@@ -55,11 +55,12 @@ set completeopt=menu,menuone,noselect
 :lua require('mycmp')
 :lua require('myfonts')
 :lua require('myluatree')
+:lua require('mytreesitter')
 " :lua require('mylspconfig')
 " :lua require('mygopls')
-" :lua require('mypyright')
+:lua require('mypyright')
 " :lua require('mytss')
-" :lua require('myelixir')
+:lua require('myelixir')
 :lua require('mytab')
 
 set completeopt=menu,menuone,noselect

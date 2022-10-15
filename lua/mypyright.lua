@@ -8,4 +8,9 @@ local lsp_defaults = require'lsp_defaults'
 -- )
 
 lspconfig.pyright.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
 }
