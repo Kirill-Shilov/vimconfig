@@ -27,13 +27,13 @@ local on_attach = function(client, bufnr)
 end
 
 
-local servers = { 'pyright', 'gopls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities.capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-  }
-}
-end
+--local servers = { 'pyright', 'gopls' }
+--for _, lsp in ipairs(servers) do
+--  nvim_lsp[lsp].setup {
+--    capabilities = capabilities.capabilities,
+--    on_attach = on_attach,
+--    flags = {
+--      debounce_text_changes = 150,
+--  }
+--}
+--end

@@ -1,5 +1,7 @@
 local lspconfig = require'lspconfig'
 local lsp_defaults = require'lsp_defaults'
+local capabilities = lsp_defaults.capabilities
+local on_attach = lsp_defaults.on_attach
 
 -- lspconfig.util.default_config = vim.tbl_deep_extend(
 --   'force',
