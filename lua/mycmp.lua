@@ -71,13 +71,13 @@ cmp.setup.cmdline(':', {
 --    debounce_text_changes = 150,
 --  }
 --}
-local servers = { 'pyright', 'elixirls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-  }
-}
-end
+--local servers = { 'pyright', 'elixirls' }
+--for _, lsp in ipairs(servers) do
+--  nvim_lsp[lsp].setup {
+--    capabilities = capabilities,
+--    on_attach = on_attach,
+--    flags = {
+--      debounce_text_changes = 150,
+--  }
+--}
+--end
