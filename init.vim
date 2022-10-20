@@ -1,7 +1,8 @@
 " ~/.config/nvim/init.vim
-" Specify a directory for plugins
+"Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Make sure you use single quotes
@@ -34,21 +35,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'junegunn/vim-easy-align'
 Plug 'crbinz/vim-links'
-" Plug 'elixir-editors/vim-elixir'
 " Plug 'kien/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 Plug 'jiangmiao/auto-pairs'
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
-"
 " Initialize plugin system
 call plug#end()
+" have to be first 
+let g:mapleader=' '
 
 set completeopt=menu,menuone,noselect
 
@@ -62,13 +62,14 @@ set completeopt=menu,menuone,noselect
 " :lua require('mytss')
 :lua require('myelixir')
 :lua require('mytab')
+:lua require('myhop')
 
 set completeopt=menu,menuone,noselect
 
 autocmd FileType <file type> setlocal filetype+=.links
 autocmd FileType nerdtree setlocal relativenumber
 colorscheme gruvbox
-let g:mapleader=' '
+
 let g:EasyMotion_use_smartsign_us = 1
 " relativenumber in nerdtree
 " enable line numbers
@@ -89,7 +90,7 @@ set smartindent
 set hlsearch
 set incsearch
 set rnu
-let g:lsp_highlights_enabled = 1
+"let g:lsp_highlights_enabled = 1
 " let g:lsp_auto_enable = 0 
 " let g:lsp_auto_enable = 1
 let g:user_emmet_leader_key='<C-y>'
@@ -103,10 +104,14 @@ syntax on
 map <C-n> :NvimTreeToggle<CR>
 map <Leader> <Plug>(easymotion-prefix)
 map <localleader>
+" hop
+
+
+
 " EasyMotion
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>s <Plug>(easymotion-overwin-f)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+" map <Leader>s <Plug>(easymotion-overwin-f)
 " terminal
 tnoremap <Esc> <C-\><C-n>
 
