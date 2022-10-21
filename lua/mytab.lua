@@ -1,9 +1,10 @@
--- local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
 
--- augroup('setIndent', { clear = true })
-autocmd('Filetype', {
-  -- group = 'setIndent',
-  pattern = { 'exs', 'ex' },
-  command = 'setlocal expandtab=2 shiftwidth=2'
+vim.api.nvim_create_augroup("myTabGroup", {clear=true})
+autocmd({'BufEnter', 'BufNew'}, {
+  pattern = { '*.exs', '*.ex' },
+  command = 'setlocal tabstop=2 shiftwidth=2',
+  group = "myTabGroup",
 })
+
+

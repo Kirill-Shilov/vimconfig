@@ -1,7 +1,6 @@
 -- Set up nvim-cmp.
 local nvim_lsp = require('lspconfig')
 local cmp = require'cmp'
-local on_attach = require'on_attach'
 
 cmp.setup({
   snippet = {
@@ -14,8 +13,8 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -61,23 +60,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
--- Set up lspconfig.
---local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
---require('lspconfig')['pyright', 'elixir'].setup {
---  capabilities = capabilities,
---  on_attach = on_attach,
---  flags = {
---    debounce_text_changes = 150,
---  }
---}
-local servers = { 'pyright', 'elixirls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-  }
-}
-end
