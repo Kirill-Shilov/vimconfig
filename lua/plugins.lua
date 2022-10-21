@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  -- dap
+  use 'mfussenegger/nvim-dap'
   -- elixir.nvim
   use 'mhanberg/elixir.nvim'
   -- telescope
@@ -45,10 +47,10 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter',
-  	cmd = 'TSUpdate',
-    config = function()
-        require("config.treesitter").setup()
-      end
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+--     config = function()
+--         require("config.treesitter").setup()
+--       end
     }
   use {
     'numToStr/Comment.nvim',
