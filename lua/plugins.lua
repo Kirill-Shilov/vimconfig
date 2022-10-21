@@ -30,11 +30,6 @@ return require('packer').startup(function(use)
   -- lsp installer
   use 'williamboman/mason.nvim'
   use 'vim-airline/vim-airline'
-  -- git plugin
-  use 'tpope/vim-fugitive'
-  -- lsp installer
-  use 'williamboman/mason.nvim'
-  use 'vim-airline/vim-airline'
   -- On-demand loading
   -- use 'neoclide/coc.nvim', {'branch': 'release'}
   use 'mattn/emmet-vim'
@@ -50,7 +45,11 @@ return require('packer').startup(function(use)
   use 'jiangmiao/auto-pairs'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter',
-  	cmd = 'TSUpdate' }
+  	cmd = 'TSUpdate',
+    config = function()
+        require("config.treesitter").setup()
+      end
+    }
   use {
     'numToStr/Comment.nvim',
     config = function()

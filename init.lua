@@ -1,7 +1,7 @@
-
+require('requirements')
 require('plugins')
-require('keymaps')
 require('settings')
+require('keymaps')
 require('mycmp')
 require('myfonts')
 require('myluatree')
