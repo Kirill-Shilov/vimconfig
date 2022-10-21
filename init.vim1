@@ -66,17 +66,13 @@ set completeopt=menu,menuone,noselect
 
 set completeopt=menu,menuone,noselect
 
-autocmd FileType <file type> setlocal filetype+=.links
-autocmd FileType nerdtree setlocal relativenumber
+" autocmd FileType <file type> setlocal filetype+=.links
+" autocmd FileType nerdtree setlocal relativenumber
 colorscheme gruvbox
 
 let g:EasyMotion_use_smartsign_us = 1
 " relativenumber in nerdtree
 " enable line numbers
-let NERDTreeShowLineNumbers=1
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
-" set cursorline
 set background=dark
 set colorcolumn=79
 set number
@@ -99,10 +95,9 @@ syntax on
 " asdf 
 vnoremap <leader>p "_dP
 
-syntax on
 " mappings
-map <C-n> :NvimTreeToggle<CR>
-map <Leader> <Plug>(easymotion-prefix)
+" map <C-n> :NvimTreeToggle<CR>
+" map <Leader> <Plug>(easymotion-prefix)
 map <localleader>
 " hop
 

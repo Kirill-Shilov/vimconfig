@@ -1,0 +1,12 @@
+
+require('plugins')
+require('keymaps')
+require('settings')
+require('mycmp')
+require('myfonts')
+require('myluatree')
+require('mytreesitter')
+require('mypyright')
+require('myelixir')
+require('mytab')
+require('myhop')
