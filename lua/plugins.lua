@@ -4,6 +4,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -25,8 +26,10 @@ return require('packer').startup(function(use)
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
-  use { 'nvim-telescope/telescope.nvim',
-  	requires = { {'nvim-lua/plenary.nvim'} }}
+  use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+      }
   -- git plugin
   use 'tpope/vim-fugitive'
   -- lsp installer
@@ -37,8 +40,9 @@ return require('packer').startup(function(use)
   use 'mattn/emmet-vim'
   use 'morhetz/gruvbox'
   use 'kyazdani42/nvim-web-devicons'
-  use { 'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
       }
   use 'junegunn/vim-easy-align'
   use 'crbinz/vim-links'
@@ -46,16 +50,14 @@ return require('packer').startup(function(use)
   use 'phaazon/hop.nvim'
   use 'jiangmiao/auto-pairs'
   -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
---     config = function()
---         require("config.treesitter").setup()
---       end
-    }
   use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-}
+      'nvim-treesitter/nvim-treesitter',
+      run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+      }
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+      }
 end)
