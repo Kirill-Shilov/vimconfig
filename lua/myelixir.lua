@@ -27,6 +27,8 @@ elixir.setup({
     vim.keymap.set("n", "<leader>gW", ":WorkspaceSymbols<cr>", map_opts)
     vim.keymap.set("n", "<leader>d", ":Diagnostics<cr>", map_opts)
 
+    vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', map_opts)
+    vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', map_opts)
 
     -- keybinds for vim-vsnip: https://github.com/hrsh7th/vim-vsnip
     -- vim.cmd([[imap <expr> <C-l> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>']])

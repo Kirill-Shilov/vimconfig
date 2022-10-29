@@ -7,6 +7,8 @@ local tree = require('nvim-tree')
 cmd 'let g:leadermap = " "'
 map('n', '<leader>p', '"_dP', {noremap = true})
 -- escape from terminal
+vim.keymap.set('n', '<C-f>', '<Nop>', defaults)
+vim.keymap.set('n', '<C-b>', '<Nop>', defaults)
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', defaults)
 vim.keymap.set('', "<C-n>", ':NvimTreeToggle<CR>', {})
 -- telescope
