@@ -1,8 +1,23 @@
 -- Set up nvim-cmp.
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require'lspconfig'
 local cmp = require'cmp'
 
+-- function with_delay(args)
+--   local timer
+--   if not cmp.visible() then
+--     timer = timer_start(3000, vim.fn["vsnip#anonymous"](args.body), {'repeat', 1}) -- For `vsnip` users.
+--   else
+--     timer = vim.fn["vsnip#anonymous"](args.body)
+--   end
+--   return timer
+--   
+-- end
+
 cmp.setup({
+ --failed own plugin requirement
+--   completion = {
+--     autocomplete = false
+--   },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -24,6 +39,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
+    { name = 'treesitter' },
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.

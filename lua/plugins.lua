@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
   -- Simple plugins can be specified as strings
   use 'neovim/nvim-lspconfig'
 
+  -- cmp
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -19,10 +20,15 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  --mundo
+  use 'simnalamburt/vim-mundo'
+
   -- dap
   use 'mfussenegger/nvim-dap'
+
   -- elixir.nvim
   use 'mhanberg/elixir.nvim'
+
   -- telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -30,20 +36,32 @@ return require('packer').startup(function(use)
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
       }
+
   -- git plugin
   use 'tpope/vim-fugitive'
+
   -- lsp installer
   use 'williamboman/mason.nvim'
   use 'vim-airline/vim-airline'
+
   -- On-demand loading
   -- use 'neoclide/coc.nvim', {'branch': 'release'}
   use 'mattn/emmet-vim'
   use 'morhetz/gruvbox'
   use 'kyazdani42/nvim-web-devicons'
+--  use {
+--      'kyazdani42/nvim-tree.lua',
+--      requires = 'kyazdani42/nvim-web-devicons',
+--      }
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
-      }
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
   use 'junegunn/vim-easy-align'
   use 'crbinz/vim-links'
   -- use 'kien/ctrlp.vim'

@@ -14,10 +14,18 @@ require'nvim-treesitter.configs'.setup {
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+  rainbow = {
+    enable = true,
+  },
+
+  indent = {
+    enable = true,
+  },
 
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
+  
 
     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is

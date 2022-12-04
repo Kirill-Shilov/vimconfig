@@ -11,7 +11,7 @@ opt.listchars:append('trail:$')
 opt.listchars:append('eol:↵')
 --opt.listchars:append('eol:⏎')
 opt.completeopt=menu,menuone,noselect
-opt.termguicolors = true
+opt.termguicolors=true
 opt.cursorline=true
 opt.colorcolumn='79'
 opt.expandtab=true
@@ -22,3 +22,8 @@ opt.smartindent=true
 opt.hlsearch=true
 opt.incsearch=true
 opt.rnu=true
+opt.number=true
+opt.undofile=true
+opt.undodir="~/.cache/vim-mundo"
+--opt.uncofile=true
+-- opt.ingnorecase=true
